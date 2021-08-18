@@ -1,0 +1,140 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="customerModel"
+            type="ashish.be.gupta.firstapplication.modules.model.EntityCustomerModel" />
+
+        <variable
+            name="listener"
+            type="ashish.be.gupta.firstapplication.modules.adapter.SearchCustomerAdapter.OnItemClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> listener.onItemClick(customerModel)}"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Customer Name"
+                    android:textColor="@color/colorSupportiveTextView"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/textViewName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@{customerModel.customerName}"
+                    android:textColor="@color/colorTextView"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Mobile Number"
+                    android:textColor="@color/colorSupportiveTextView"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/textViewMobileNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@{customerModel.customerMobileNumber}"
+                    android:textColor="@color/colorTextView"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Address"
+                    android:textColor="@color/colorSupportiveTextView"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/textViewAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@{customerModel.fullAddress}"
+                    android:textColor="@color/colorTextView"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="STB Number"
+                    android:textColor="@color/colorSupportiveTextView"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/textViewSTBNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@{customerModel.stbNumber}"
+                    android:textColor="@color/colorTextView"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Last Payment Details"
+                    android:textColor="@color/colorSupportiveTextView"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/colorTextView"
+                    android:textSize="16dp"
+                    app:fromDate="@{customerModel.paymentFromDate}"
+                    app:toDate="@{customerModel.paymentToDate}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/colorTextView"
+                    android:textSize="16dp"
+                    app:setCurrencyFormat="@{customerModel.totalBillAmount}" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageViewMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:onClick="@{(view) -> listener.showPopMenu(view,customerModel)}"
+                app:srcCompat="@drawable/ic_more_three_dot_24dp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

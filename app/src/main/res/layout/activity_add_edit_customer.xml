@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="customerDetails"
+            type="ashish.be.gupta.firstapplication.modules.model.EntityCustomerModel" />
+
+        <variable
+            name="handler"
+            type="ashish.be.gupta.firstapplication.modules.view.AddEditCustomerActivity" />
+
+        <variable
+            name="buttonName"
+            type="String" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/addEditCustomerContainer"
+        tools:context=".modules.view.AddEditCustomerActivity">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:paddingBottom="48dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutName"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputLayoutEditTextName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Customer Name"
+                        android:inputType="text"
+                        android:text="@{customerDetails.customerName}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Building"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp" />
+
+                <ashish.be.gupta.firstapplication.CustomSpinner
+                    android:id="@+id/spinnerAddEditCustomerBuilding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/border" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Room"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp" />
+
+                <ashish.be.gupta.firstapplication.CustomSpinner
+                    android:id="@+id/spinnerAddEditCustomerRoom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/border" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutMobile"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputLayoutEditTextMobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Mobile Number"
+                        android:inputType="text"
+                        android:text="@{customerDetails.customerMobileNumber}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutEmail"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputLayoutEditTextEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email"
+                        android:inputType="text"
+                        android:text="@{customerDetails.customerEmail}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--                <TextView-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="12dp"-->
+                <!--                    android:text="Package"-->
+                <!--                    android:textColor="@android:color/black"-->
+                <!--                    android:textSize="16dp" />-->
+
+                <!--                <ashish.be.gupta.firstapplication.CustomSpinner-->
+                <!--                    android:id="@+id/spinnerAddEditCustomerSTBPackage"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="4dp"-->
+                <!--                    android:background="@drawable/border" />-->
+
+                <!--                <com.google.android.material.textfield.TextInputLayout-->
+                <!--                    android:id="@+id/textInputLayoutPackageAmount"-->
+                <!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:enabled="false"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="12dp">-->
+
+                <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                <!--                        android:id="@+id/textInputLayoutEditTextPackageAmount"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:hint="Package Amount"-->
+                <!--                        android:inputType="number"-->
+                <!--                        android:text="0" />-->
+
+                <!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+                <!--                <LinearLayout-->
+                <!--                    android:id="@+id/linearLayoutSTBFields"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:orientation="vertical">-->
+
+                <!--                </LinearLayout>-->
+
+                <!--                <LinearLayout-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:clickable="true"-->
+                <!--                    android:focusable="true"-->
+                <!--                    android:padding="8dp"-->
+                <!--                    android:layout_marginTop="12dp"-->
+                <!--                    android:onClick="@{() -> handler.addSTB()}"-->
+                <!--                    android:background="@drawable/empty_border"-->
+                <!--                    android:orientation="horizontal">-->
+
+                <!--                    <ImageView-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_gravity="center"-->
+                <!--                        app:srcCompat="@drawable/ic_add_black_24dp" />-->
+
+                <!--                    <TextView-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_gravity="center"-->
+                <!--                        android:text="Add STB"-->
+                <!--                        android:textColor="@color/colorTextView"-->
+                <!--                        android:layout_marginStart="12dp"-->
+                <!--                        android:textSize="16dp" />-->
+                <!--                </LinearLayout>-->
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonCustomerSubmit"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:onClick="@{() -> handler.onSubmit()}"
+                    android:text="@{buttonName}" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/progressBarAddEditCustomer"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+</layout>

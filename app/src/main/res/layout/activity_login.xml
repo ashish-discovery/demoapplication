@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="ashish.be.gupta.firstapplication.login.LoginActivity" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:background="#eceff1"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/relativeLayoutLogin"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@color/colorPrimary" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="170dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="24dp"
+                    app:cardCornerRadius="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="24dp"
+                        android:orientation="vertical"
+                        tools:context=".login.LoginActivity">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="SIGN IN"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayoutMobile"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/textInputLayoutEditTextMobile"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Mobile Number"
+                                android:inputType="textPhonetic" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayoutPassword"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            app:passwordToggleDrawable="@drawable/passwordtoggle"
+                            app:passwordToggleEnabled="true">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/textInputLayoutEditTextPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Password"
+                                android:inputType="textPassword" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/buttonLogin"
+                            style="@style/Widget.MaterialComponents.Button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:onClick="@{() -> handler.doLogin()}"
+                            android:text="SIGN IN" />
+
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/buttonForgotPassword"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="@{() -> handler.forgotPassword()}"
+                            android:text="Forgot Password ?" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </RelativeLayout>
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/contentLoadingProgressBar"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</layout>

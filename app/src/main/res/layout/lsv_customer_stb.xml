@@ -1,0 +1,112 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="stbModel"
+            type="ashish.be.gupta.firstapplication.modules.model.EntitySTBModel" />
+
+        <variable
+            name="listener"
+            type="ashish.be.gupta.firstapplication.modules.adapter.CustomerSTBAdapter.OnItemClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> listener.onItemClick(stbModel)}"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="STB Number"
+                    android:textColor="@color/colorSupportiveTextView"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@{stbModel.stbNumber}"
+                    android:textColor="@color/colorTextView"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Package Name"
+                    android:textColor="@color/colorSupportiveTextView"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@{stbModel.stbPackageModel.packageName}"
+                    android:textColor="@color/colorTextView"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Package Amount"
+                    android:textColor="@color/colorSupportiveTextView"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    app:setCurrencyFormat="@{stbModel.stbPackageModel.packageAmount}"
+                    android:textColor="@color/colorTextView"
+                    android:textSize="16dp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Status"
+                    android:textColor="@color/colorSupportiveTextView"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@{stbModel.status.name()}"
+                    android:textColor="@color/colorTextView"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageViewMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:onClick="@{(view) -> listener.showPopMenu(view,stbModel)}"
+                app:srcCompat="@drawable/ic_more_three_dot_24dp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

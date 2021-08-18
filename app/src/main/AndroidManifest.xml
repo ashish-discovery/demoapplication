@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ashish.be.gupta.firstapplication">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FirstApplication">
+        <activity
+            android:name=".modules.view.SearchCustomerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".modules.view.AddEditCustomerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".modules.view.CustomerLogsListActivity"
+            android:exported="true" />
+        <activity
+            android:name=".modules.view.CustomerListActivity"
+            android:exported="true" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:theme="@style/FullScreen"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+
+    </application>
+
+</manifest>

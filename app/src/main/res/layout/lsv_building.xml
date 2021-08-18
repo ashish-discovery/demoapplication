@@ -1,0 +1,84 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="BuildingListDataBinding">
+
+        <variable
+            name="buildingDetails"
+            type="ashish.be.gupta.firstapplication.modules.model.EntityBuildingModel" />
+
+        <variable
+            name="listener"
+            type="ashish.be.gupta.firstapplication.modules.adapter.BuildingAdapter.OnItemClickListener" />
+
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> listener.onItemClick(buildingDetails)}"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Building Name"
+                android:textColor="@color/colorSupportiveTextView"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{buildingDetails.buildingName}"
+                android:textColor="@color/colorTextView"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Building Number"
+                android:textColor="@color/colorSupportiveTextView"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/textViewNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{buildingDetails.buildingNumber}"
+                android:textColor="@color/colorTextView"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="No of floors"
+                android:textColor="@color/colorSupportiveTextView"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/textViewFloor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{``+(buildingDetails.floorCount-1)}"
+                android:textColor="@color/colorTextView"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

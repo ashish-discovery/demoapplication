@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="ashish.be.gupta.firstapplication.modules.view.SearchCustomerActivity" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/searchCustomerContainer"
+        tools:context=".modules.view.SearchCustomerActivity">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="12dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutSearch"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputLayoutEditTextSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Search"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonBuildingSubmit"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:onClick="@{() -> handler.onSearch()}"
+                android:text="Search" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayoutSearch"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:textSize="12dp"
+            android:textColor="@color/colorSupportiveTextView"
+            android:text="*Customer Name, Mobile No, Email ID, STB Number"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewSearchCustomer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/textViewNote" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/progressBarSearchCustomer"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible" />
+
+
+    </RelativeLayout>
+</layout>
